@@ -1,0 +1,278 @@
+.footer {
+    background-color: $grey-bg;
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 2px solid $grey-separator;
+        padding-top: 33px;
+        padding-bottom: 30px;
+    }
+    
+    &__adress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 21px;
+
+        &-name {
+            font-size: $text-size;
+            line-height: 20px;
+            color: $main-regular;
+            margin-bottom: 10px;
+        }
+
+        &-link {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $blue-regular;
+            transition: 400ms;
+
+            &:hover {
+                color: $accent;
+            }
+
+            &:focus-visible {
+                color: $accent;
+                outline: 1px solid $accent;
+            }
+
+            &:active {
+                color: $blue-active;
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    &__fb-link {
+        display: inline-flex;
+        margin-bottom: 10px;
+        
+        &:focus-visible {
+            outline: 1px solid $accent;
+        }
+
+        & path {
+            transition: 400ms;
+        }
+        
+        &:hover path {
+            fill: $accent;
+        }
+
+        &:focus-visible path {
+            fill: $accent;
+        }
+    }
+
+    &__phone {
+        font-weight: 700;
+        font-size: $text-size;
+        line-height: $h4-height;
+        color: $main-alt;
+        margin-bottom: 10px;
+        transition: 400ms;
+
+        &:hover {
+            color: $accent;
+        }
+
+        &:active {
+            color: $blue-active;
+        }
+
+        &:focus-visible {
+            outline: 1px solid $accent;
+            color: $accent;
+        }
+    }
+
+    &__mail {
+        font-weight: 700;
+        font-size: $text-size;
+        line-height: $h4-height;
+        color: $blue-regular;
+        transition: 400ms;
+        
+        &:hover {
+            color: $accent;
+        }
+
+        &:active {
+            color: $blue-active;
+        }
+
+        &:focus-visible {
+            outline: 1px solid $accent;
+            color: $accent;
+        }
+    }
+
+    &__copyright {
+        font-size: $text-size;
+        line-height: $h4-height;
+        color: $grey-text;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $grey-text;
+        }
+
+        &:active {
+            color: $accent;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        &__block {
+            display: grid;
+            
+            &--main-page {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: min-content min-content;
+            }
+
+            &--another-page {
+                grid-template-columns: 1fr auto 1fr;
+                grid-template-rows: repeat(3, min-content);
+                margin: 0 auto;
+            }
+        }
+
+        &__adress {
+            flex-direction: row;
+
+            &--another-page {
+                grid-column: 2 / 3;
+            }
+
+            &-name {
+                margin-bottom: 0;
+                display: inline-flex;
+                align-items: center;
+
+                &::after {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    background-color: $grey-text;
+                    border-radius: 50%;
+                    margin-left: 7px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &__fb-link {
+            margin-bottom: 0;
+        }
+        
+        &__contacts {
+            flex-direction: row;
+
+            &--main-page {
+                grid-row: 2 / 3;
+                grid-column: 1 / 3;
+                margin-bottom: 0;
+            }
+
+            &--another-page {
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+            }
+        }
+
+        &__phone {
+            margin-bottom: 0;
+            display: inline-flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                background-color: $grey-text;
+                border-radius: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            &::after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                background-color: $grey-text;
+                border-radius: 50%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        &__copyright {
+            &--main-page {
+                grid-column: 2 / 3;
+                align-self: start;
+                justify-self: end;
+            }
+
+            &--another-page {
+                grid-row: 3 / 4;
+                grid-column: 2 / 3;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .footer {
+        &__block {
+            padding-top: 29px;
+
+            &--another-page {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: min-content min-content;
+            }
+        }
+
+        &__adress {
+            flex-direction: row;
+
+            &--another-page {
+                grid-column: 1 / 2;
+            }
+        }
+
+        &__contacts {
+            &--another-page {
+                grid-row: 2 / 3;
+                grid-column: 1 / 3;
+                margin-bottom: 0;
+            }
+        }
+        
+        &__copyright {
+            &--another-page {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                justify-self: end;
+                align-self: start;
+            }
+        }
+    }
+}

@@ -1,0 +1,198 @@
+.clients {
+    margin: 0 auto;
+
+    &__title {
+        font-weight: 700;
+        font-size: $h3-caps-size;
+        line-height: $h3-caps-height;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $main-regular;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__name {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 120px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: 400ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:focus-visible {
+            outline: none;
+            transform: scale(1.1);
+        }
+
+        &--hillel {
+            background-image: url(../img/clients/hillel.png);
+            background-color: #1C4280;
+        }
+
+        &--wannabiz {
+            background-image: url(../img/clients/wannabiz.png);
+            background-color: #143646;
+        }
+
+        &--tapgerine {
+            background-image: url(../img/clients/tapgerine.png);
+            background-color: #F48B30;
+        }
+
+        &--3dlook {
+            background-image: url(../img/clients/3dlook.png);
+            background-color: #9E4DC3;
+        }
+        
+        &--orangear {
+            background-image: url(../img/clients/orangear.png);
+            background-color: #FD9339;
+        }
+
+        &--adtelligent {
+            background-image: url(../img/clients/adtelligent.png);
+            background-color: #E2E2E4;
+        }
+
+        &--clickky {
+            background-image: url(../img/clients/clickky.png);
+            background-color: #C71C36;
+            display: none;
+        }
+
+        &--eco-leasing {
+            background-image: url(../img/clients/eco-leasing.png);
+            background-color: #DCF3F9;
+            display: none;
+        }
+
+        &--infratek {
+            background-image: url(../img/clients/infratek.png);
+            background-color: #EAEAEA;
+            display: none;
+        }
+
+        &--city-park {
+            background-image: url(../img/clients/city-park.png);
+            background-color: #282240;
+            display: none;
+        }
+
+        &--artprint {
+            background-image: url(../img/clients/artprint.png);
+            background-color: #1D4568;
+            display: none;
+        }
+
+        &--ultimatecard {
+            background-image: url(../img/clients/ultimatecard.png);
+            background-color: $black;
+            display: none;
+        }
+    }
+}
+
+@media (min-resolution: 210dpi) and (min-resolution: 2dppx) {
+    .clients {
+        &__name {
+            &--hillel {
+                background-image: url(../img/clients/hillel@2x.png);
+            }
+    
+            &--wannabiz {
+                background-image: url(../img/clients/wannabiz@2x.png);
+            }
+    
+            &--tapgerine {
+                background-image: url(../img/clients/tapgerine@2x.png);
+            }
+    
+            &--3dlook {
+                background-image: url(../img/clients/3dlook@2x.png);
+            }
+            
+            &--orangear {
+                background-image: url(../img/clients/orangear@2x.png);
+            }
+    
+            &--adtelligent {
+                background-image: url(../img/clients/adtelligent@2x.png);
+            }
+    
+            &--clickky {
+                background-image: url(../img/clients/clickky@2x.png);
+            }
+    
+            &--eco-leasing {
+                background-image: url(../img/clients/eco-leasing@2x.png);
+            }
+    
+            &--infratek {
+                background-image: url(../img/clients/infratek@2x.png);
+            }
+    
+            &--city-park {
+                background-image: url(../img/clients/city-park@2x.png);
+            }
+    
+            &--artprint {
+                background-image: url(../img/clients/artprint@2x.png);
+            }
+    
+            &--ultimatecard {
+                background-image: url(../img/clients/ultimatecard@2x.png);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .clients {
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        &__name {
+            width: 33.333%;
+
+            &--clickky {
+                display: block;
+            }
+    
+            &--eco-leasing {
+                display: block;
+            }
+    
+            &--infratek {
+                display: block;
+            }
+    
+            &--city-park {
+                display: block;
+            }
+    
+            &--artprint {
+                display: block;
+            }
+    
+            &--ultimatecard {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .clients {
+        &__name {
+            width: 25%;
+        }
+    }
+}

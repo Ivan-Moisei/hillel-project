@@ -1,0 +1,45 @@
+.switcher {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    &--about {
+        margin-bottom: 0;
+    }
+    
+    &__btn {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $blue-regular;
+        opacity: 0.2;
+        border: none;
+        cursor: pointer;
+        transition: 400ms;
+        outline: 2px solid transparent;
+    
+        &:focus-visible {
+            outline: 2px solid $black;
+        }
+    
+        &:hover:not(.switcher__btn--current) {
+            opacity: 0.6;
+        }
+    
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+    
+        &--current {
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width: 530px) {
+    .switcher__btn {
+        &--about {
+            display: none;
+        }
+    }
+}

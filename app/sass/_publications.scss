@@ -1,0 +1,181 @@
+.publications {
+    background-color: $grey-bg;
+    padding-top: 28px;
+    padding-bottom: 30px;
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: $h3-caps-size;
+        line-height: $h3-caps-height;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $blue-regular;
+        margin-bottom: 5px;
+        transition: 400ms;
+
+        &::after {
+            content: '';
+            margin-left: 3px;
+            width: 7px;
+            height: 7px;
+            border-top: 2px solid $blue-regular;
+            border-right: 2px solid $blue-regular;
+            transform: rotate(45deg);
+            transition: 400ms;
+        }
+        
+        &:hover {
+            color: $accent;
+
+            &::after {
+                border-top: 2px solid $accent;
+                border-right: 2px solid $accent;
+                margin-left: 8px;
+            }
+        }
+
+        &:active {
+            color: $blue-active;
+            
+            &::after {
+                border-top: 2px solid $blue-active;
+                border-right: 2px solid $blue-active;
+            }
+        }
+
+        &:focus-visible {
+            color: $accent;
+            outline: 1px solid $accent;
+            
+            &::after {
+                border-top: 2px solid $accent;
+                border-right: 2px solid $accent;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: $h2-size;
+        line-height: $h2-height;
+        background: $gradient-red-text;
+        @include text-gradient;
+        margin-bottom: 30px;
+    }
+
+    &__article {
+        background-color: $white;
+        border-radius: 8px;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__img {
+        border-radius: 8px 8px 0px 0px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: flex;
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: $text-size;
+        line-height: 20px;
+        color: $blue-regular;
+        margin-bottom: 14px;
+        transition: 400ms;
+
+        &-abbreviation {
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            color: $accent;
+        }
+
+        &:active {
+            color: $blue-active;
+        }
+
+        &:focus-visible {
+            color: $accent;
+            outline: 1px solid $accent;
+        }
+    }
+
+    &__date {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $grey-text;
+        border-bottom: 4px solid $grey-separator;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        align-self: stretch;
+    }
+
+    &__info {
+        font-size: 14px;
+        line-height: 22px;
+        color: $black;
+    }
+}
+
+@media (min-width: 650px) {
+    .publications {
+        &__caption {
+            font-size: $hero-size;
+            line-height: 56px;
+            margin-bottom: 25px;
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr min-content;
+            grid-column-gap: 30px;
+        }
+        
+        &__article:last-child {
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .publications {
+        &__cards {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        &__article {
+            &:last-child {
+                grid-column: 3 / 4;
+            }
+            
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__title {
+            line-height: 21px;
+        }
+    }
+}
